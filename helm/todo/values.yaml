@@ -18,11 +18,11 @@ route:
 
 livenessProbe:
   httpGet:
-    path: /
+    path: /todo/
     port: http
 readinessProbe:
   httpGet:
-    path: /
+    path: /todo/
     port: http
 
 mysql:
