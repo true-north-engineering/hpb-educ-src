@@ -163,7 +163,7 @@
         </plugins>
       </build>
       <properties>
-        <quarkus.package.type>uber-jar</quarkus.package.type>
+        <quarkus.package.type>fast-jar</quarkus.package.type>
       </properties>
     </profile>
   </profiles>
