@@ -4,7 +4,8 @@ image:
   pullPolicy: IfNotPresent
   tag: "latest"
 
-imagePullSecrets: []
+imagePullSecrets:
+  - name: nexus-docker-auth
 nameOverride: ""
 fullnameOverride: ""
 
