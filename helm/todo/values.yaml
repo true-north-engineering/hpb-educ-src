@@ -1,0 +1,38 @@
+replicaCount: 1
+image:
+  repository: nexus-docker.ocp.hpb.tn.hr/todo-single
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+route:
+  enabled: true
+
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
+
+mysql:
+  auth:
+    database: todo
+    username: todo
+    password: todopassw0rd
+  networkPolicy:
+    enabled: false
+  primary:
+    pdb:
+      create: false
+  serviceAccount:
+    create: false
