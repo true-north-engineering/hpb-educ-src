@@ -29,7 +29,7 @@ spec:
               value: {{ .Values.mysql.auth.username }}
             - name: DATABASE_PASSWORD
               value: {{ .Values.mysql.auth.password }}
-            - name: DATABASE_SVC
+            - name: DATABASE_SVC_HOSTNAME
               value: {{ .Release.Name }}-mysql
           ports:
             - name: http
