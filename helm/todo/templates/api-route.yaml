@@ -12,7 +12,7 @@ spec:
   {{- end }}
   to:
     kind: Service
-    name: {{ include "todo.fullname" . }}
+    name: {{ include "todo.fullname" . }}-api
   port:
     targetPort: {{ .Values.api.service.port }}
   tls:
