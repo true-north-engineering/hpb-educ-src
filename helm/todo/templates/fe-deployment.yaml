@@ -23,14 +23,8 @@ spec:
           image: "{{ .Values.fe.image.repository }}:{{ .Values.fe.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.fe.image.pullPolicy }}
           env:
-            - name: DATABASE_NAME
-              value: {{ .Values.mysql.auth.database }}
-            - name: DATABASE_USER
-              value: {{ .Values.mysql.auth.username }}
-            - name: DATABASE_PASSWORD
-              value: {{ .Values.mysql.auth.password }}
-            - name: DATABASE_SVC
-              value: {{ .Release.Name }}-mysql
+            - name: REACT_APP_API_HOST
+              value: {{ .Values.route.host }}/todo
           ports:
             - name: http
               containerPort: {{ .Values.fe.service.port }}
