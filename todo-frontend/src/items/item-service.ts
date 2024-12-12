@@ -22,5 +22,5 @@ export async function addItem(item: Item) {
  * Delete a todo list item by ID.
  */
 export async function deleteItem(itemId: number) {
-  return itemApi.url(`/${itemId}`).delete().json<Item>();
+  return itemApi.url(`/${itemId}`).delete();
 }
