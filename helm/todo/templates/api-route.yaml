@@ -4,11 +4,17 @@ apiVersion: route.openshift.io/v1
 metadata:
   name: {{ include "todo.fullname" . }}
 spec:
+  {{- with .Values.route.host }}
+  host: {{ . }}
+  {{- end }}
+  {{- with .Values.api.route_path }}
+  path: {{ . }}
+  {{- end }}
   to:
     kind: Service
     name: {{ include "todo.fullname" . }}
   port:
-    targetPort: {{ .Values.service.port }}
+    targetPort: {{ .Values.api.service.port }}
   tls:
     termination: edge
     insecureEdgeTerminationPolicy: Redirect
