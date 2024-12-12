@@ -8,12 +8,12 @@ import io.quarkus.rest.data.panache.ResourceProperties;
 
 @ResourceProperties(path = "/todo/api/items")
 public interface ItemResource extends PanacheEntityResource<Item, Long> {
-    @MethodProperties(exposed = false)
+    @MethodProperties(exposed = true)
     Item add(Item item);
 
-    @MethodProperties(exposed = false)
+    @MethodProperties(exposed = true)
     Item update(Long id, Item existingItem);
 
-    @MethodProperties(exposed = false)
+    @MethodProperties(exposed = true)
     boolean delete(Long id);
 }
