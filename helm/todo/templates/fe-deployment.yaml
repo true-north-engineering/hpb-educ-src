@@ -24,7 +24,7 @@ spec:
           imagePullPolicy: {{ .Values.fe.image.pullPolicy }}
           env:
             - name: REACT_APP_API_HOST
-              value: {{ .Values.route.host }}/todo
+              value: todo
           ports:
             - name: http
               containerPort: {{ .Values.fe.service.port }}
