@@ -2,7 +2,7 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: {{ include "todo.fullname" . }}
+  name: {{ include "todo.fullname" . }}-api
 spec:
   {{- with .Values.route.host }}
   host: {{ . }}

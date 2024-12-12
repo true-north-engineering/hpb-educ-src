@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "todo.fullname" . }}
+  name: {{ include "todo.fullname" . }}-fe
   labels:
     {{- include "todo.labels" . | nindent 4 }}
 spec:
@@ -19,7 +19,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       containers:
-        - name: {{ .Chart.Name }}
+        - name: frontend
           image: "{{ .Values.fe.image.repository }}:{{ .Values.fe.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.fe.image.pullPolicy }}
           env:
