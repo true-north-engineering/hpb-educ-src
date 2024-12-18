@@ -3,7 +3,7 @@ api:
   image:
     repository: nexus-docker.ocp.hpb.tn.hr/todo-api
     pullPolicy: IfNotPresent
-    tag: "latest"
+    tag: "nexus-docker.ocp.hpb.tn.hr/todo-api:user11"
 
   imagePullSecrets:
     - name: nexus-docker-auth
@@ -26,7 +26,7 @@ fe:
   image:
     repository: nexus-docker.ocp.hpb.tn.hr/todo-frontend
     pullPolicy: IfNotPresent
-    tag: "latest"
+    tag: "nexus-docker.ocp.hpb.tn.hr/todo-frontend:user11"
 
   imagePullSecrets:
     - name: nexus-docker-auth
@@ -48,7 +48,7 @@ fe:
 
 route:
   enabled: true
-  host: 
+  host: todo-user11.ocp.hpb.tn.hr
 
 mysql:
   auth:
